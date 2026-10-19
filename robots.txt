@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://lgc-vision.fr/sitemap.xml
