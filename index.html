@@ -55,7 +55,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=4">
 </head>
 <body>
   <header class="site-header">
@@ -82,12 +82,18 @@
         <div class="hero-proof"><span class="proof-icon">✦</span><span><strong>Vallauris · secteur Saint-Bernard</strong><small>Un support pensé pour les entreprises locales</small></span></div>
       </div>
       <div class="hero-visual">
-        <div class="photo-frame"><div class="photo-window"><img src="assets/ecran-vallauris.jpg" alt="Vue de l’axe routier et de l’environnement de l’écran publicitaire à Vallauris"><img src="assets/ecran-vallauris2.png" alt="" aria-hidden="true" style="opacity:0"></div><div class="photo-label"><span class="live-dot"></span> VOTRE MARQUE ICI</div></div>
+        <div class="photo-frame"><div class="photo-window" role="button" tabindex="0" aria-haspopup="dialog" aria-controls="imageLightbox" aria-label="Agrandir la photo de l’écran à Vallauris"><img src="assets/ecran-vallauris.jpg" alt="Vue de l’axe routier et de l’environnement de l’écran publicitaire à Vallauris"><img src="assets/ecran-vallauris2.png" alt="" aria-hidden="true" style="opacity:0"></div><div class="photo-label"><span class="live-dot"></span> VOTRE MARQUE ICI</div></div>
         <div class="floating-card"><span class="floating-icon">↗</span><span><strong>Un message qui se remarque.</strong><small>Digital · dynamique · flexible</small></span></div>
         <div class="hero-orbit"></div>
       </div>
       <div class="hero-bottom"><span>01 / VISIBILITÉ LOCALE</span><span>VALLAURIS — ANTIBES</span><span>FAITES-VOUS REMARQUER&nbsp; ↘</span></div>
     </section>
+
+    <dialog class="image-lightbox" id="imageLightbox" aria-labelledby="lightboxCaption">
+      <button class="lightbox-close" type="button" aria-label="Fermer la photo"><span aria-hidden="true">×</span></button>
+      <img class="lightbox-image" alt="">
+      <p class="lightbox-caption" id="lightboxCaption"></p>
+    </dialog>
 
     <section class="intro section" id="concept">
       <div class="section-kicker">LE CONCEPT <span>01 — 04</span></div>
@@ -111,7 +117,7 @@
     <section class="location section" id="emplacement">
       <div class="section-kicker">UN EMPLACEMENT STRATÉGIQUE <span>03 — 04</span></div>
       <div class="location-layout">
-        <div class="location-copy"><p class="eyebrow">VALLAURIS · SAINT-BERNARD</p><h2>Au cœur des<br><span>trajets du quotidien.</span></h2><p>L’écran se situe dans le secteur de Saint-Bernard à Vallauris, sur un axe reliant les bassins de vie de Vallauris et d’Antibes.</p><div class="direction-list"><div><span class="direction-arrow">↗</span><span><strong>Vallauris → Antibes</strong><small>Un axe de circulation local</small></span></div><div><span class="direction-arrow">↙</span><span><strong>Antibes → Vallauris</strong><small>Une présence dans les deux sens</small></span></div></div><p class="map-note">La carte ci-contre situe le secteur d’implantation. Contactez-nous pour les informations détaillées sur le support et les modalités de diffusion.</p></div>
+        <div class="location-copy"><p class="eyebrow">VALLAURIS · SAINT-BERNARD</p><h2>Au cœur des<br><span>trajets du quotidien.</span></h2><p>L’écran se situe dans le secteur de Saint-Bernard à Vallauris, sur un axe reliant les bassins de vie de Vallauris et d’Antibes.</p><div class="screen-specs" aria-label="Caractéristiques de l’écran"><div><span>DIMENSIONS DE L’ÉCRAN</span><strong>2 × 1,2 m</strong></div><div><span>DURÉE DU SPOT</span><strong>7 secondes</strong></div></div><div class="direction-list"><div><span class="direction-arrow">↗</span><span><strong>Vallauris → Antibes</strong><small>Un axe de circulation local</small></span></div><div><span class="direction-arrow">↙</span><span><strong>Antibes → Vallauris</strong><small>Une présence dans les deux sens</small></span></div></div><p class="map-note">La carte ci-contre situe le secteur d’implantation. Contactez-nous pour les informations détaillées sur le support et les modalités de diffusion.</p></div>
         <div class="map-wrap"><div class="map-top"><span class="map-pin">⌖</span><div><strong>Zone d’implantation</strong><small>Saint-Bernard, Vallauris</small></div><span class="map-tag">CÔTE D’AZUR</span></div><iframe title="Carte du secteur Saint-Bernard à Vallauris" src="https://www.openstreetmap.org/export/embed.html?bbox=7.035%2C43.575%2C7.075%2C43.605&layer=mapnik&marker=43.590%2C7.055" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe><div class="map-bottom"><span>VALLAURIS, ALPES-MARITIMES</span><a href="https://www.openstreetmap.org/?mlat=43.590&mlon=7.055#map=15/43.590/7.055" target="_blank" rel="noopener">Ouvrir la carte ↗</a></div></div>
       </div>
     </section>
@@ -145,6 +151,6 @@
   </main>
 
   <footer class="footer"><a href="#accueil" class="footer-brand">LGC <span>VISION</span></a><p>Votre publicité, vue par tous.</p><div class="footer-links"><a href="#concept">Le concept</a><a href="#emplacement">Emplacement</a><a href="#contact">Contact</a></div><div class="footer-bottom"><span>© <span id="year"></span> LGC VISION</span><span>VALLAURIS · CÔTE D’AZUR</span><a href="mentions-legales.html">Mentions légales</a></div></footer>
-  <script src="script.js"></script>
+  <script src="script.js?v=4"></script>
 </body>
 </html>

@@ -2,6 +2,12 @@ const menuButton = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.nav');
 const locationImages = document.querySelectorAll('.photo-frame img');
 const locationFadeDuration = 1200;
+const photoWindow = document.querySelector('.photo-window');
+const lightbox = document.getElementById('imageLightbox');
+const lightboxImage = lightbox.querySelector('.lightbox-image');
+const lightboxCaption = lightbox.querySelector('.lightbox-caption');
+const lightboxCloseButton = lightbox.querySelector('.lightbox-close');
+const lightboxCloseDuration = 250;
 
 locationImages.forEach(image => {
   image.style.transition = `opacity ${locationFadeDuration}ms ease`;
@@ -18,6 +24,51 @@ window.setInterval(() => {
   nextImage.classList.add('is-active');
   nextImage.style.opacity = '1';
 }, 5000);
+
+function openLightbox() {
+  const image = locationImages[activeLocationImage];
+  lightboxImage.src = image.currentSrc || image.src;
+  lightboxImage.alt = image.alt || 'Vue complémentaire de l’écran publicitaire à Vallauris';
+  lightboxCaption.textContent = lightboxImage.alt;
+  lightbox.classList.remove('is-closing');
+  document.body.classList.add('lightbox-open');
+  lightbox.showModal();
+  lightboxCloseButton.focus();
+}
+
+function closeLightbox() {
+  if (!lightbox.open || lightbox.classList.contains('is-closing')) return;
+  lightbox.classList.add('is-closing');
+  const delay = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : lightboxCloseDuration;
+  window.setTimeout(() => {
+    lightbox.close();
+    lightbox.classList.remove('is-closing');
+    document.body.classList.remove('lightbox-open');
+    photoWindow.focus();
+  }, delay);
+}
+
+photoWindow.addEventListener('click', openLightbox);
+photoWindow.addEventListener('keydown', event => {
+  if (event.key === 'Enter' || event.key === ' ') {
+    event.preventDefault();
+    openLightbox();
+  }
+});
+lightboxCloseButton.addEventListener('click', closeLightbox);
+lightbox.addEventListener('click', event => {
+  if (event.target === lightbox) closeLightbox();
+});
+lightbox.addEventListener('cancel', event => {
+  event.preventDefault();
+  closeLightbox();
+});
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape' && lightbox.open) {
+    event.preventDefault();
+    closeLightbox();
+  }
+});
 
 menuButton.addEventListener('click', () => {
   const open = nav.classList.toggle('open');
